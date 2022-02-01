@@ -1,33 +1,30 @@
-import Phaser from 'phaser'
-
-import TitleScreen from './scenes/TitleScreen'
-import Game from './scenes/Game'
-import GameBackground from './scenes/GameBackground'
-import GameOver from './scenes/GameOver'
-import Preload from './scenes/Preload'
-
-import * as SceneKeys from './consts/SceneKeys'
-
 const config = {
 	width: 800,
 	height: 500,
 	type: Phaser.AUTO,
-	// backgroundColor: '#616161',
+	 backgroundColor: '#616161',
 	physics: {
 		default: 'arcade',
 		arcade: {
 			gravity: { y: 0 },
-			debug: true
+			debug: false
+		},
+		scale : {
+		      parent: 'main',
+    mode: Phaser.Scale.FIT,
+  autoCenter: Phaser.Scale.CENTER_BOTH,
 		}
 	}
 }
 
 const game = new Phaser.Game(config)
 
-game.scene.add(SceneKeys.TitleScreen, TitleScreen)
-game.scene.add(SceneKeys.Game, Game)
-game.scene.add(SceneKeys.GameBackground, GameBackground)
-game.scene.add(SceneKeys.GameOver, GameOver)
-game.scene.add(SceneKeys.Preload, Preload)
+game.scene.add('titlescreen', TitleScreen)
+game.scene.add('game', Game)
+game.scene.add('game-background', GameBackground)
+game.scene.add('game-over', GameOver)
+game.scene.add('preload', Preload)
 
-game.scene.start(SceneKeys.Preload)
+game.scene.start(Game)
+
+console.log('main.js')

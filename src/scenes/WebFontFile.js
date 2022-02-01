@@ -1,8 +1,6 @@
-import Phaser from 'phaser'
 
-import WebFontLoader from 'webfontloader'
-
-export default class WebFontFile extends Phaser.Loader.File
+//import WebFontLoader from './webfontloader'
+ class WebFontFile extends Phaser.Loader.File
 {
 	/**
 	 * @param {Phaser.Loader.LoaderPlugin} loader

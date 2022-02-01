@@ -1,11 +1,6 @@
-import Phaser from 'phaser'
+console.log('Game')
 
-import { GameBackground, GameOver } from '../consts/SceneKeys'
-import * as Colors from '../consts/Colors'
-import * as AudioKeys from '../consts/AudioKeys'
-
-import { PressStart2P } from '../consts/Fonts'
-
+const white = 0xffffff
 const GameState = {
 	Running: 'running',
 	PlayerWon: 'player-won',
@@ -33,7 +28,7 @@ class Game extends Phaser.Scene
 
 		this.physics.world.setBounds(-100, 0, 1000, 500)
 
-		this.ball = this.add.circle(400, 250, 10, Colors.White, 1)
+		this.ball = this.add.circle(400, 250, 10, 0xffffff, 1)
 		this.physics.add.existing(this.ball)
 		this.ball.body.setCircle(10)
 		this.ball.body.setBounce(1, 1)
@@ -42,10 +37,10 @@ class Game extends Phaser.Scene
 		this.ball.body.setCollideWorldBounds(true, 1, 1)
 		this.ball.body.onWorldBounds = true
 
-		this.paddleLeft = this.add.rectangle(50, 250, 30, 100, Colors.White, 1)
+		this.paddleLeft = this.add.rectangle(50, 250, 30, 100, 0xffffff, 1)
 		this.physics.add.existing(this.paddleLeft, true)
 
-		this.paddleRight = this.add.rectangle(750, 250, 30, 100, Colors.White, 1)
+		this.paddleRight = this.add.rectangle(750, 250, 30, 100, 0xffffff, 1)
 		this.physics.add.existing(this.paddleRight, true)
 		
 		this.physics.add.collider(this.paddleLeft, this.ball, this.handlePaddleBallCollision, undefined, this)
@@ -227,5 +222,3 @@ class Game extends Phaser.Scene
 		this.ball.body.setVelocity(vec.x, vec.y)
 	}
 }
-
-export default Game

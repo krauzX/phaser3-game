@@ -1,9 +1,6 @@
-import Phaser from 'phaser'
 
-import { TitleScreen } from '../consts/SceneKeys'
-import { PressStart2P } from '../consts/Fonts'
-
-export default class GameOver extends Phaser.Scene
+console.log("gameover")
+class GameOver extends Phaser.Scene
 {
 	/**
 	 *
