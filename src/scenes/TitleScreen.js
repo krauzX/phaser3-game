@@ -1,5 +1,5 @@
 //import Phaser from '../.phaser.js'
-console.log('title')
+
  class TitleScreen extends Phaser.Scene
 {
 	preload()
@@ -9,6 +9,7 @@ console.log('title')
 
 	create()
 	{
+	  console.log('title')
 		const title = this.add.text(400, 200, 'Old School Tennis', {
 			fontSize: 38,
 			fontFamily: PressStart2P
@@ -20,9 +21,9 @@ console.log('title')
 		})
 		.setOrigin(0.5)
 
-		this.input.keyboard.once('keydown-SPACE', () => {
+		this.input.keyboard.once('pointerdown', () => {
 			this.sound.play('pong-beep')
-			this.scene.start(Game)
+			this.scene.start('game')
 		})
 	}
 }

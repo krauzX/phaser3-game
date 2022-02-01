@@ -1,4 +1,4 @@
-console.log('Game')
+
 
 const white = 0xffffff
 const GameState = {
@@ -25,7 +25,7 @@ class Game extends Phaser.Scene
 	{
 		this.scene.run(GameBackground)
 		this.scene.sendToBack(GameBackground)
-
+console.log('Game')
 		this.physics.world.setBounds(-100, 0, 1000, 500)
 
 		this.ball = this.add.circle(400, 250, 10, 0xffffff, 1)
@@ -193,7 +193,7 @@ class Game extends Phaser.Scene
 			this.scene.stop(GameBackground)
 
 			// show the game over/win screen
-			this.scene.start(GameOver, {
+			this.scene.start('game-over', {
 				leftScore: this.leftScore,
 				rightScore: this.rightScore
 			})

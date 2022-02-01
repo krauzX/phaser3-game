@@ -1,5 +1,4 @@
 
-console.log("gameover")
 class GameOver extends Phaser.Scene
 {
 	/**
@@ -8,6 +7,7 @@ class GameOver extends Phaser.Scene
 	 */
 	create(data)
 	{
+	  console.log("gameover")
 		let titleText = 'Game Over'
 		if (data.leftScore > data.rightScore)
 		{
@@ -27,7 +27,7 @@ class GameOver extends Phaser.Scene
 		.setOrigin(0.5)
 
 		this.input.keyboard.once('keydown-SPACE', () => {
-			this.scene.start(TitleScreen)
+			this.scene.start('titlescreen')
 		})
 	}
 }

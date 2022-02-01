@@ -14,6 +14,7 @@
 
 	create()
 	{
-		this.scene.start(TitleScreen)
+	  console.log('preload')
+		this.scene.start('titlescreen')
 	}
 }
