@@ -10,8 +10,8 @@
 	preload()
 	{
 		this.add.text(200,200,'hi')
-		this.load.audio('pong-beep','../public/assets/ping_pong_8bit_beeep.ogg')
-	this.load.audio('pong-plop','../public/assets/ping_pong_8bit_plop.ogg')
+		this.load.audio('pong-beep','../../public/assets/ping_pong_8bit_beeep.ogg')
+	this.load.audio('pong-plop','../../public/assets/ping_pong_8bit_plop.ogg')
 	}
 
 	create()
