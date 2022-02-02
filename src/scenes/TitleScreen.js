@@ -21,7 +21,7 @@
 		})
 		.setOrigin(0.5)
 
-		this.input.keyboard.once('pointerdown', () => {
+		this.input.keyboard.once('keydown-SPACE', () => {
 			this.sound.play('pong-beep')
 			this.scene.start('game')
 		})

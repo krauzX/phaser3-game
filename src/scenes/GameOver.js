@@ -17,7 +17,7 @@ class GameOver extends Phaser.Scene
 		
 		this.add.text(400, 200, titleText, {
 			fontFamily: PressStart2P,
-			fontSize: 38
+			fontSize: 50
 		})
 		.setOrigin(0.5)
 
@@ -26,7 +26,7 @@ class GameOver extends Phaser.Scene
 		})
 		.setOrigin(0.5)
 
-		this.input.keyboard.once('keydown-SPACE', () => {
+	this.input.keyboard.once('keydown-SPACE', () => {
 			this.scene.start('titlescreen')
 		})
 	}
