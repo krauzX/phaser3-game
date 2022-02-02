@@ -23,8 +23,8 @@ class Game extends Phaser.Scene
 
 	create()
 	{
-		this.scene.run(GameBackground)
-		this.scene.sendToBack(GameBackground)
+		this.scene.run('game-background')
+		this.scene.sendToBack('game-background')
 console.log('Game')
 		this.physics.world.setBounds(-100, 0, 1000, 500)
 
@@ -85,12 +85,12 @@ console.log('Game')
 			return
 		}
 
-		this.sound.play(AudioKeys.PongPlop)
+	//	this.sound.play('pong-plop')
 	}
 
 	handlePaddleBallCollision(paddle, ball)
 	{
-		this.sound.play(AudioKeys.PongBeep)
+		this.sound.play('pong-beep')
 
 		/** @type {Phaser.Physics.Arcade.Body} */
 		const body = this.ball.body

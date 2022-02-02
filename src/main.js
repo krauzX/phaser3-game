@@ -1,3 +1,6 @@
+window.onload = function() {
+
+
 const config = {
 	width: 800,
 	height: 500,
@@ -28,3 +31,5 @@ game.scene.add('preload', Preload)
 game.scene.start('preload')
 
 console.log('main.js')
+
+}
