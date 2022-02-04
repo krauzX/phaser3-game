@@ -7,7 +7,7 @@ class GameOver extends Phaser.Scene
 	 */
 	create(data)
 	{
-	  console.log("gameover")
+	  
 		let titleText = 'Game Over'
 		if (data.leftScore > data.rightScore)
 		{

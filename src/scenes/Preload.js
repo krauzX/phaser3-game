@@ -20,13 +20,17 @@ class Preload extends Phaser.Scene {
     }
 
     create() {
-        console.log('preload');
         
         var beep = this.sound.add('pong-beep');
+        
+//Phaser.ScaleManager.aspectRatio;
 
-        console.log(this.cache.audio.getKeys());
+
+this.time.advacedTiming = true; 
+        this.scene.start('game');
         
-        this.scene.start('titlescreen');
-        
+    }
+    update() {
+      
     }
 }

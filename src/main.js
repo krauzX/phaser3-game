@@ -1,21 +1,25 @@
 window.onload = function() {
+  
+  const ratio = Math.max(window.innerWidth / window.innerHeight, window.innerHeight / window.innerWidth)
+const DEFAULT_HEIGHT = 400 // any height you want
+const DEFAULT_WIDTH = ratio * DEFAULT_HEIGHT
 
 
 const config = {
-	width: 800,
-	height: 500,
+	width: DEFAULT_WIDTH,
+	height: DEFAULT_HEIGHT,
 	type: Phaser.AUTO,
 	 //backgroundColor: '#616161',
 	 scale : {
 		  parent: 'main',
     mode: Phaser.Scale.FIT,
- // autoCenter: Phaser.Scale.CENTER_BOTH,
+ autoCenter: Phaser.Scale.CENTER_BOTH,
 		},
 	physics: {
 		default: 'arcade',
 		arcade: {
-			gravity: { y: 0 },
-			debug: false
+			gravity:  false,
+			debug: true
 		}
 	},
 }
@@ -29,6 +33,9 @@ game.scene.add('game-over', GameOver)
 game.scene.add('preload', Preload)
 
 game.scene.start('preload')
+
+
+
 
 console.log('main.js')
 

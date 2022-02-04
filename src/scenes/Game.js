@@ -1,5 +1,6 @@
 
-
+var isClicking = false;
+var swipeDirection;
 const white = 0xffffff
 const GameState = {
 	Running: 'running',
@@ -23,9 +24,9 @@ class Game extends Phaser.Scene
 
 	create()
 	{
+	  this.scene.stop('preload');
 		this.scene.run('game-background')
 		this.scene.sendToBack('game-background')
-console.log('Game')
 		this.physics.world.setBounds(-100, 0, 1000, 500)
 
 		this.ball = this.add.circle(400, 250, 10, 0xffffff, 1)
@@ -63,16 +64,25 @@ console.log('Game')
 
 		this.time.delayedCall(1500, () => {
 			this.resetBall()
+			
 		})
 	}
 
 	update()
 	{
+	  
 		if (this.paused || this.gameState !== GameState.Running)
 		{
 			return
 		}
-
+this.input.on('pointerdown', (pointer) => {
+  		/** @type {Phaser.Physics.Arcade.Body} */
+		const body = this.paddleLeft.body
+  this.paddleLeft.y = pointer.y
+  body.updateFromGameObject()
+  
+  
+})
 		this.processPlayerInput()
 		this.updateAI()
 		this.checkScore()
@@ -85,7 +95,7 @@ console.log('Game')
 			return
 		}
 
-	//	this.sound.play('pong-plop')
+		this.sound.play('pong-plop')
 	}
 
 	handlePaddleBallCollision(paddle, ball)
@@ -106,7 +116,7 @@ console.log('Game')
 		/** @type {Phaser.Physics.Arcade.StaticBody} */
 		const body = this.paddleLeft.body
 
-		if (this.cursors.up.isDown)
+	if (this.cursors.up.isDown)
 		{
 			this.paddleLeft.y -= 10
 			body.updateFromGameObject()
