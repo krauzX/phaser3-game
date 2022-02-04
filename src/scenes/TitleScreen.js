@@ -9,7 +9,7 @@
 
 	create()
 	{
-	  console.log('title')
+	  
 		const title = this.add.text(400, 200, 'Old School Tennis', {
 			fontSize: 38,
 			fontFamily: PressStart2P
@@ -23,7 +23,10 @@
 
 		this.input.keyboard.once('keydown-SPACE', () => {
 			this.sound.play('pong-beep')
-			this.scene.start('game')
+			this.scene.start('game');
+		});
+		this.input.on("pointerdown", () => {
+		  this.scene.start('game')
 		})
 	}
 }

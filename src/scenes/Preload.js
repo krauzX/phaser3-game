@@ -27,7 +27,7 @@ class Preload extends Phaser.Scene {
 
 
 this.time.advacedTiming = true; 
-        this.scene.start('game');
+        this.scene.start('titlescreen');
         
     }
     update() {
