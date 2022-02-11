@@ -1,10 +1,7 @@
 window.onload = function() {
   
-  const ratio = Math.max(window.innerWidth / window.innerHeight, window.innerHeight / window.innerWidth)
-const DEFAULT_HEIGHT = 400 // any height you want
-const DEFAULT_WIDTH = ratio * DEFAULT_HEIGHT
-
-
+  const DEFAULT_HEIGHT = "100%" // any height you want
+const DEFAULT_WIDTH = "100%"
 const config = {
 	width: DEFAULT_WIDTH,
 	height: DEFAULT_HEIGHT,
